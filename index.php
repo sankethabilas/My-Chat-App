@@ -31,7 +31,7 @@
             <div class="offset-2 offset-lg-4 col-8 col-lg-4 mt-4 mb-4">
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-4 d-grid">
-                        <button class="btn btn-dark" >Sign In</button>
+                        <button class="btn btn-dark" onclick="signin();">Sign In</button>
                     </div>
 
                     <div class="col-12 col-lg-6 mb-4 d-grid">
