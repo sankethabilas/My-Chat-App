@@ -36,3 +36,28 @@ function signup() {
 function gotosignup() {
   window.location = "signup.php";
 }
+
+function signin() {
+
+  
+  var email = document.getElementById("email");
+  var password = document.getElementById("pw");
+  
+
+  var f = new FormData();
+
+  f.append("e", email.value);
+  f.append("p", password.value);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      var t = r.responseText;
+      alert(t);
+    }
+  };
+  r.open("POST", "signinprocess.php", true);
+  r.open();
+  
+}
