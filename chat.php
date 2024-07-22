@@ -13,8 +13,52 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-12 text-center mt-4 mb-4">
+            <div class="col-12 text-center mt-4 mb-2">
                 <h1 class="text-light fw-bold">My Chat App</h1>
+            </div>
+
+            <div class="offset-2 offset-lg-2 col-8 col-lg-8 mb-2">
+                <select class="form-select" id="receiver">
+
+                    <?php
+
+                    session_start();
+
+                    $con = new mysqli("localhost", "root", "Abi0021@", "d21", "3306");
+
+                    if ($con->connect_error) {
+
+                        die("connection failed:" . $con->connect_error);
+                    }
+
+                    // echo("connected succesfully!");
+
+                    $q = "SELECT * FROM `user` ";
+
+                    $r = $con->query($q);
+                    $num = $r->num_rows;
+
+                    for ($x = 0; $x < $num; $x++) {
+                        $data = $r->fetch_assoc();
+                        $all_id = $data["id"];
+                        $all_names = $data["fname"];
+
+                        if ($all_id != $_SESSION["u"]["id"]) {
+                    ?>
+                            <option value="<?php echo ($all_id); ?>"><?php echo($all_names);?></option>
+
+
+                    <?php
+
+
+                        }
+                    }
+
+                    ?>
+
+
+
+                </select>
             </div>
 
             <div class="offset-2 col-8  border border-2" style="height: 500px;">
@@ -66,7 +110,7 @@
                         <input type="text" class="form-control" placeholder="Write your massage">
                     </div>
                     <div class="col-2 d-grid">
-                        <button class="btn btn-danger fw-bold fst-italic text-uppercase">send</button>
+                        <button class="btn btn-danger fw-bold fst-italic text-uppercase" onclick="send();">send</button>
                     </div>
 
                 </div>
@@ -76,6 +120,8 @@
 
         </div>
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 

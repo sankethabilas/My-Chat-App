@@ -14,7 +14,7 @@ if ($con->connect_error) {
 
 // echo("connected succesfully!");
 
-$q = "SELECT * FROM `user` where `email`='" . $email . "' ,`password`='" . $password . "'  ";
+$q = "SELECT * FROM `user` WHERE `email`='" . $email . "' AND `password`='" . $password . "'  ";
 
 $r = $con->query($q);
 
