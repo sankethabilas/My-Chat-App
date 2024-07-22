@@ -54,7 +54,7 @@ function signin() {
 
       if (t == "Success") {
         alert("Welcome !!!");
-        window.location="chat.php";
+        window.location = "chat.php";
       } else {
         alert(t);
       }
@@ -64,8 +64,32 @@ function signin() {
   r.send(f);
 }
 
+function send() {
+  var text = document.getElementById("text");
+  var receiver = document.getElementById("receiver");
 
+  var f = new FormData();
 
-function send(){
-  alert("ok");
+  f.append("t", text.value);
+  f.append("r", receiver.value);
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 4) {
+      var t = r.responseText;
+      if (t == "success") {
+        text.value = null;
+        alert("massage sent");
+      } else {
+        alert(t);
+      }
+    }
+  };
+  r.open("POST", "sendprocess.php", true);
+  r.send(t);
+}
+
+function loader()
+{
+  alert("load massage");
 }

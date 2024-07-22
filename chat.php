@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary" onload="loader();">
 
     <div class="container-fluid">
 
@@ -107,7 +107,7 @@
                 <div class="row">
 
                     <div class="col-10">
-                        <input type="text" class="form-control" placeholder="Write your massage">
+                        <input type="text" class="form-control" placeholder="Write your massage" id="text">
                     </div>
                     <div class="col-2 d-grid">
                         <button class="btn btn-danger fw-bold fst-italic text-uppercase" onclick="send();">send</button>
