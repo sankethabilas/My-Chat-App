@@ -64,43 +64,13 @@
             <div class="offset-2 col-8  border border-2" style="height: 500px;">
 
                 <!--msg box-->
-                <div class="offset-2 col-8 border border-2" style="height: 400px; margin-top:50px;">
+                <div class="offset-2 col-8 border border-2" style="height: 400px; margin-top:50px;" id="msg_box">
 
-                    <!--Received massages-->
+                    
 
-                    <div class="row">
-                        <div class="col-5 bg-light mt-2 rounded ms-4">
-                            <div class="row">
-                                <div class="col-12">
-                                    <label class="form-label fs-5 fw-bold">Pasan</label>
-                                </div>
-                                <div class="col-12">
-                                    <p class="text-primary">Received massage</p>
-                                </div>
+                <!-- massage content load here   -->
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- sent msg -->
-
-                    <div class="row d-flex flex-column align-content-end justify-content-end">
-
-                        <div class="col-5 bg-primary rounded me-3 mt-2">
-
-                            <div class="col-12">
-
-                                <label class="form-label fs-5 fw-bold">Me</label>
-                            </div>
-
-                            <div class="col-12">
-
-                                <p class="text-light">Sent Massage</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                   
             </div>
             <!-- msg area  -->
             <div class="offset-2 offset-lg-4 col-8 col-lg-4 mt-3 d-grid">
@@ -119,6 +89,7 @@
             </div>
 
         </div>
+        
     </div>
 
     <script src="script.js"></script>

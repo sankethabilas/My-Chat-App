@@ -75,21 +75,40 @@ function send() {
   var r = new XMLHttpRequest();
 
   r.onreadystatechange = function () {
-    if (r.readyState == 4 && r.status == 4) {
+    if (r.readyState == 4 && r.status == 200) {
       var t = r.responseText;
       if (t == "success") {
         text.value = null;
-        alert("massage sent");
+        alert("message sent");
       } else {
         alert(t);
       }
     }
   };
   r.open("POST", "sendprocess.php", true);
-  r.send(t);
+  r.send(f);
 }
 
-function loader()
-{
-  alert("load massage");
+function loader() {
+  setInterval(loadmsg, 5000);
+}
+
+function loadmsg() {
+  var receiver = document.getElementById("receiver");
+
+  var f = new FormData();
+
+  f.append("r", reciever.value);
+
+  var r = new XMLHttpRequest();
+
+  r.onreadystatechange = function () {
+    if (r.readyState == 4 && r.status == 200) {
+      var t = r.responseText;
+      document.getElementById("msg_box").innerHTML = t;
+    }
+  };
+
+  r.open("POST", "loadingprocess.php", true);
+  r.send(f);
 }
